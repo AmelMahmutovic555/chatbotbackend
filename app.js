@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = new pg.Client({
   connectionString:
-    "postgresql://neondb_owner:npg_obqifSDg7Uz2@ep-delicate-dawn-agged4nf-pooler.c-2.eu-central-1.aws.neon.tech/chatai?sslmode=require&channel_binding=require",
+    "postgresql://neondb_owner:npg_obqifSDg7Uz2@ep-delicate-dawn-agged4nf-pooler.c-2.eu-central-1.aws.neon.tech/chatai?sslmode=require",
   ssl: {
     rejectUnauthorized: false,
   },
