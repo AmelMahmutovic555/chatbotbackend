@@ -21,6 +21,16 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const db = new pg.Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
+
+db.connect()
+  .then(() => console.log("✅ Connected to Neon PostgreSQL"))
+  .catch((err) => console.error("❌ Database connection failed:", err));
 
 
 const openai = new OpenAI({
